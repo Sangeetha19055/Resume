@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>My Resume</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0px;
+        max-height: 100vh;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        background: #e6dddd;
+        cursor: default;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+      }
+      section {
+        width: 93%;
+        height: 100%;
+        top: 40px;
+        bottom: 100px;
+        /*background: linear-gradient(45deg, #e9e8f1, #1b8cb9, #4e8a50);*/
+        background: linear-gradient(285deg, #10a855, #71dfee);
+        color: white;
+        margin: 20px 30px;
+        position: relative;
+        display: flex;
+      }
+      section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, #e91e63, #e6bf12, #e91e63);
+        clip-path: circle(10% at right 90%);
+      }
+      section::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #45aafd, #5aff08);
+        clip-path: circle(10% at 0% 10%);
+      }
+      .card {
+        display: flex;
+        width: 100%;
+        padding: 20px;
+        bottom: 40px;
+        box-sizing: border-box;
+        border-right: transparent;
+        border: 7px solid #111;
+        z-index: 1;
+      }
+      nav {
+        width: 28%;
+        padding: 30px 15px;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        box-sizing: border-box;
+        border-radius: 20px;
+        color: #111;
+        margin-right: 50px;
+        box-sizing: border-box;
+      }
+      main {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+      }
+      .first-div {
+        display: flex;
+        box-sizing: border-box;
+      }
+      .first-div .content ul {
+        list-style-type: none;
+      }
+      .first-div .content ul li {
+        color: rgb(51, 51, 51);
+        font-size: 16px;
+        margin-left: -18px;
+      }
+
+      .first-div .content ul li.text1 {
+        font-size: 18px;
+        color: rgb(245, 16, 85);
+        font-weight: 600;
+        text-indent: -9px;
+      }
+      .first-div .content ul li.text1 .fa {
+        margin-right: 4px;
+      }
+      .first-div .content ul li.text2 {
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .box {
+        padding: 20px 20px 20px 20px;
+        margin-right: 2px;
+        margin-bottom: 20px;
+        width: 99%;
+        transition: 0.5s;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.1);
+        box-sizing: border-box;
+        border-radius: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      main .box .name {
+        padding: 5px;
+      }
+      main .box .name p {
+        padding: 0px;
+        color: black;
+      }
+      main .box .name p b {
+        color: #e91e63;
+      }
+
+      main .box1 {
+        padding: 20px 20px 10px 20px;
+        margin-right: 20px;
+        margin-left: 0px;
+        width: 49%;
+        transition: 0.5s;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.1);
+        box-sizing: border-box;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        border-radius: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      main .box2 {
+        padding: 20px 20px 10px 20px;
+        margin-right: 5px;
+        width: 49%;
+        transition: 0.5s;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.1);
+        box-sizing: border-box;
+        border-radius: 20px;
+        border-bottom-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      main .box1:hover {
+        box-shadow: -20px 50px 100px rgba(0, 0, 0, 0.7);
+      }
+      main .box2:hover {
+        box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.7);
+      }
+      h3 {
+        color: rgb(245, 16, 85);
+        margin: 10px 0;
+        text-transform: capitalize;
+        font-size: 1.25em;
+      }
+
+      .contact .info {
+        position: relative;
+      }
+      .contact .info li {
+        display: flex;
+        margin-bottom: 16px;
+      }
+      .contact .info li span:nth-child(1) {
+        color: rgb(15, 14, 14);
+        font-size: 20px;
+        margin-right: 10px;
+        margin-left: -36px;
+      }
+      .contact .info li span {
+        color: #111;
+      }
+      .contact .info li a {
+        color: #111;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .box3 {
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        width: 99%;
+        height: 500px;
+        margin-top: 20px;
+        padding: 10px 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        transition: 0.5s;
+      }
+      .box3:hover {
+        box-shadow: -20px 50px 100px rgba(0, 0, 0, 0.7);
+      }
+      .container {
+        width: 60%;
+      }
+      .container p {
+        font-size: 14px;
+        color: #111;
+        font-weight: 800;
+      }
+      .skill-container {
+        width: 100%;
+        background: #ddd;
+      }
+      .skill {
+        text-align: right;
+        color: #111;
+      }
+      .html {
+        width: 90%;
+        background: linear-gradient(45deg, #f05a4f, #f4c030);
+      }
+      .css {
+        width: 80%;
+        background: linear-gradient(45deg, #f05a4f, #f4c030);
+      }
+      .js {
+        width: 70%;
+        background: linear-gradient(45deg, #f05a4f, #f4c030);
+      }
+      .jquery {
+        width: 60%;
+        background: linear-gradient(45deg, #f05a4f, #f4c030);
+      }
+      .php {
+        width: 50%;
+        background: linear-gradient(45deg, #f05a4f, #f4c030);
+      }
+      @media only screen and (max-width: 760px) {
+        .container {
+          width: 96%;
+        }
+      }
+      @media (max-width: 991px) {
+        .card {
+          display: flex;
+          flex-direction: column;
+        }
+        nav {
+          width: 100%;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        main {
+          width: 100%;
+        }
+        main .box {
+          margin-top: 20px;
+        }
+        main .box1 {
+          border-bottom-right-radius: 2px;
+          border-bottom-left-radius: 2px;
+          border-radius: 20px;
+        }
+        main .box2 {
+          border-bottom-right-radius: 2px;
+          border-bottom-left-radius: 2px;
+          border-radius: 20px;
+        }
+        .box3 {
+          width: 100%;
+          margin-bottom: 20px;
+          border-bottom-right-radius: 2px;
+          border-bottom-left-radius: 2px;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+          border-radius: 20px;
+        }
+      }
+      @media (max-width: 700px) {
+        .first-div {
+          display: flex;
+          flex-direction: column;
+        }
+
+        main .box {
+          width: 100%;
+          margin: 0px;
+          margin-bottom: 20px;
+          margin-top: 20px;
+          margin-right: 0;
+        }
+
+        main .box1 {
+          width: 100%;
+          margin: 0px;
+          margin-bottom: 20px;
+          margin-top: 20px;
+        }
+        main .box2 {
+          width: 100%;
+          margin: 20px 0px 10px 0px;
+        }
+      }
+      @media (max-width: 600px) {
+        html,
+        body {
+          padding: 0px;
+          margin-left: -10px;
+          margin-right: 5px;
+        }
+      }
+      .profile {
+        width: 200px;
+        height: 160px;
+        margin-left: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="card">
+        <nav>
+          <img class="profile" src="image/11.png" />
+
+          <h3>About me</h3>
+          <p>
+            I'm a web designer, good at UI design. I know Html ,CSS, JavaScript,
+            jQuery, .Net and PHP. This resume is made by me, using Html and CSS.
+            I have an experience in E-pub job. Now, I am looking for a job.
+          </p>
+          <div class="sec contact">
+            <h3>Contact Info</h3>
+            <ul class="info">
+              <!--   <li>
+                            <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                            <span>647 Linda Street <br> Phoenixville, PA 191460,<br>USA</USA></span>
+                        </li>-->
+              <li>
+                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                <span
+                  ><a href="tel:+91 8190872950">+91 8190872950</a><br
+                /></span>
+              </li>
+              <li>
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <span
+                  ><a href="mailto:sangeeswty4@gmail.com"
+                    >sangeeswty4@gmail.com</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main>
+          <div class="box">
+            <div class="name">
+              <h3>Personal details</h3>
+              <p><b>Name:</b> Sangeetha.</p>
+              <p><b>D.O.B:</b> 19-05-1997.</p>
+              <p><b>Marital status:</b> married.</p>
+              <p><b>Language:</b> Tamil / English.</p>
+              <p><b>Extra-curricular:</b> Learning New Techonology.</p>
+            </div>
+          </div>
+          <div class="first-div">
+            <div class="box1">
+              <div class="education">
+                <h3>Eduction</h3>
+                <div class="content">
+                  <ul>
+                    <li class="text1">
+                      <i class="fa fa-caret-right" aria-hidden="true"></i> B.Sc
+                      Computer Science
+                    </li>
+                    <li class="text2">
+                      Bharathidasan Govt College for Women, Puducherry
+                    </li>
+                    <li>2014 - 2017 (77.5%)</li>
+                  </ul>
+                </div>
+                <div class="content">
+                  <ul>
+                    <li class="text1">
+                      <i class="fa fa-caret-right" aria-hidden="true"></i>High
+                      School
+                    </li>
+                    <li class="text2">
+                      Annai Sivagami Govt Girls Higher Secondary School
+                    </li>
+                    <li>2012 - 2014 (72%)</li>
+                  </ul>
+                </div>
+                <div class="content">
+                  <ul>
+                    <li class="text1">
+                      <i class="fa fa-caret-right" aria-hidden="true"></i>SSLC
+                    </li>
+                    <li class="text2">Mother Theresa HSS-Murungapakkam</li>
+                    <li>2011 - 2012 (70%)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="box2">
+              <div class="education">
+                <h3>Experience</h3>
+                <div class="content">
+                  <ul>
+                    <li class="text1">
+                      <i class="fa fa-caret-right" aria-hidden="true"></i> E-pub
+                    </li>
+                    <li class="text2">Trinity Publishing Services Pvt Ltd</li>
+                    <li>1yr</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box3">
+            <h3>programming skills</h3>
+            <div class="container">
+              <p>HTML / HTML5</p>
+              <div class="skill-container">
+                <div class="skill html">95%</div>
+              </div>
+
+              <p>CSS / CSS3</p>
+              <div class="skill-container">
+                <div class="skill css">80%</div>
+              </div>
+
+              <p>JavaScript</p>
+              <div class="skill-container">
+                <div class="skill js">70%</div>
+              </div>
+
+              <p>React</p>
+              <div class="skill-container">
+                <div class="skill jquery">60%</div>
+              </div>
+              <p>MongoDB</p>
+              <div class="skill-container">
+                <div class="skill php">50%</div>
+              </div>
+              <p>Sass</p>
+              <div class="skill-container">
+                <div class="skill php">40%</div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+    <footer></footer>
+  </body>
+</html>
